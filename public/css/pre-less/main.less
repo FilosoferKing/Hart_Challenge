@@ -1,5 +1,5 @@
 /*
-Author: 
+Author: Trevor Linan
 Author URI: 
 Version: 1.0
 Text Domain: 
@@ -8,14 +8,218 @@ Text Domain:
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 1.0 General
-2.0
-3.0
+2.0 Navigation Tabs
+3.0 Info Container
 --------------------------------------------------------------*/
 
 // Variables 
+@blue: #1D7BE3;
+
+// Reusables
+.buttonBlue {
+	width: 200px;
+	height: 40px;
+	background-color: @blue;
+	border: none;
+	border-radius: 3px;
+	color: #fff;
+}
+
+.buttonWhite {
+	width: 200px;
+	height: 40px;
+	background-color: #fff;
+	border: 1px solid #e6e6e6;
+	border-radius: 3px;
+	color: @blue;
+}
+
+.formLayout {
+	height: 46px;
+
+	.form-group {
+		position: relative;
+		margin: 15px 0;
+
+		img {
+			position: absolute;
+			right: -20px;
+			top: 13px;
+		}
+	}
+
+	label {
+		font-weight: 300;
+	}
+
+	input {
+		height: 46px;
+		box-shadow: 0 0 0 0px;
+		border: 1px solid #666;
+		border-radius: 3px;
+	}
+}
 
 
 /* === 1.0 GENERAL === */
 html, body {
-	font-family: Arial, sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
+
+/* === 2.0 NAVIGATION TABS === */
+#settingsTitle {
+	font-size: 1.5em;
+	font-weight: 700;
+	padding: 15px 0;
+}
+
+#navTabs {
+	position: relative;
+	height: 40px;
+
+	button {
+		position: relative;
+		display: inline-block;
+		padding: 0;
+		margin-left: -4px;
+		margin-top: -2px;
+		width: 150px;
+		height: 45px;
+		font-size: 14px;
+		font-weight: 700;
+		border-radius: 3px;
+		border-top: 1px solid #666;
+		border-left: 1px solid #666;
+		border-right: 1px solid #666;
+		border-bottom: none;
+		background-color: @blue;
+		color: #fff;
+		box-shadow: none;
+		z-index: 2;
+
+		&:after{
+				position: absolute;
+				bottom: 0;
+				left: -1px;
+				width: 150px;
+				height: 2px;
+				background-color: #fff;
+				content: '';
+		}
+
+		&:active {
+			box-shadow: none;
+		}
+
+		&.active {
+		background-color: #fff;
+		color: @blue;
+
+			&:after{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				border: 1px solid #fff;
+				width: 150px;
+				height: 2px;
+				background-color: #fff;
+				content: '';
+			}
+		}
+	}
+}
+
+/* === 3.0 INFO CONTAINER === */
+
+#profileContainer {
+	border:1px solid #666;
+	padding-top: 25px;
+
+	h2 {
+		font-size: 18px;
+		padding: 10px 0;
+	}
+
+	#photoSection {
+
+		#imgContainer {
+			width: 200px;
+			height: 200px;
+			background: transparent url('../../img/hart_logo.png') no-repeat 50% 50%;
+			background-size: contain;
+		}
+
+		#addPhoto {
+			position: relative;
+			padding: 15px 0;
+		}
+	}
+
+	#profileSection {
+		position: relative;
+
+		#emailUpdates {
+			position: relative;
+			font-size: 12px;
+			margin-top: 5px;
+			margin-bottom: 25px;
+
+			div {
+				display: inline-block;
+				padding: none;
+			}
+
+			input {
+				margin: 0 10px;
+			}
+		}
+
+		#password {
+
+			.form-group {
+				padding-top: 25px;
+
+				button {
+					display: inline-block;
+				}
+
+				img {
+					display: inline-block;
+					position: relative;
+					right: 0;
+					top: 0;
+					left: 10px;
+				}
+			}
+		}
+	}
+
+	#socialMediaSection {
+
+		#facebook {
+			background: transparent url('../../img/facebook.png') no-repeat 2% 50%;
+			background-size: 38px 38px;
+		}
+
+		#twitter {
+			background: transparent url('../../img/twitter.png') no-repeat 2% 50%;
+			background-size: 38px 38px;
+		}
+
+		#google {
+			background: transparent url('../../img/google.png') no-repeat 2% 50%;
+			background-size: 38px 38px;
+		}
+
+	}
+
+	#actionButtons {
+		float: right;
+		padding: 50px 0;
+
+	}
+
+}
+	
+
+

@@ -4,14 +4,133 @@
      <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
     <!-- Custom CSS (minified) -->
     <link rel="stylesheet" href="css/less/main.min.css">
 </head>
 <body>
 
-    <div>Node/Express/Less Boilerplate</div>
+	<!--================== TITLE ===================-->
+	<section id="settingsTitle" class="col-sm-8 col-sm-offset-2">My Settings
+	</section>
 
+	<!--================== NAV TABS ===================-->
+	<section id="navTabs" class="col-sm-8 col-sm-offset-2">
+		<button class="active">Profile</button>
+		<button>Notifications</button>
+		<button>Social</button>
+		<button>Billing</button>
+	</section>
+
+	<!--================== PROFILE CONTAINTER ===================-->
+	<section id="profileContainer" class="col-sm-8 col-sm-offset-2">
+
+		<!--== PHOTO CONTAINTER ==-->
+		<div id="photoSection" class="col-sm-3">
+			<h2>Photo</h2>
+			<div id="imgContainer">
+				<img src="img/hart_logo.png" alt="Hart Logo" />
+			</div>
+			<div class="col-sm-12">
+				<button>Add photo from...</button>
+			</div>
+		</div>
+
+		<!--== INFO CONTAINTER ==-->
+		<div id="infoContainer" class="col-sm-8 col-sm-offset-1">
+
+			<!-- Profile Section -->
+			<div id="profileSection" class="col-sm-12">
+				<h2>Profile</h2>
+				<form class="form-horizontal formLayout">
+					<div class="form-group">
+					<label for="name" class="col-sm-3 control-label">Name</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="name">
+						</div>
+						<img src="img/question_fill.png"/>
+					</div>
+				</form>
+				<form class="form-horizontal formLayout">
+					<div class="form-group">
+					<label for="email" class="col-sm-3 control-label">Email Address</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="email">
+						</div>
+						<img src="img/question_fill.png"/>
+					</div>
+				</form>
+				<div id="emailUpdates" class="col-sm-9 col-sm-offset-3">
+					<span>I'd like to receive email updates</span><input type="radio" id="updates"> Yes <input type="radio" id="updates"> No
+				</div>
+				<form id="password" class="form-horizontal formLayout">
+					<div class="form-group">
+					<label for="password" class="col-sm-3 control-label">Password</label>
+						<div class="col-sm-9">
+							<button class="buttonBlue">Change my Password</button>
+							<img src="img/question_fill.png"/>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- Social Media Section -->
+			<div id="socialMediaSection" class="col-sm-12">
+				<h2>Social Media</h2>
+				<form class="form-horizontal formLayout">
+					<div class="form-group">
+					<label for="facebook" class="col-sm-3 control-label">Facebook</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="facebook">
+						</div>
+						<img src="img/question_fill.png"/>
+					</div>
+				</form>
+				<form class="form-horizontal formLayout">
+					<div class="form-group">
+					<label for="twitter" class="col-sm-3 control-label">Twitter</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="twitter">
+						</div>
+						<img src="img/question_fill.png"/>
+					</div>
+				</form>
+				<form class="form-horizontal formLayout">
+					<div class="form-group">
+					<label for="google" class="col-sm-3 control-label">Google</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="google">
+						</div>
+						<img src="img/question_fill.png"/>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!--================== ACTION BUTTONS ===================-->
+		<div id="actionButtons" class="col-sm-8 col-sm-push-1">
+			<button class="buttonWhite">Cancel</button>
+			<button class="buttonBlue">Save</button>
+		</div>
+
+	</section>
+
+    <!-- jQuery -->
+    <script src="js/jquery-3.1.1.min.js"></script>
+	<!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
     <!-- Javascript -->
     <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
