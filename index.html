@@ -19,11 +19,13 @@
 	</section>
 
 	<!--================== NAV TABS ===================-->
-	<section id="navTabs" class="col-sm-8 col-sm-offset-2">
-		<button class="active">Profile</button>
-		<button>Notifications</button>
-		<button>Social</button>
-		<button>Billing</button>
+	<section class="col-sm-8 col-sm-offset-2 navTabs">
+		<ul>
+			<li class="active">Profile</li>
+			<li>Notifications</li>
+			<li>Social</li>
+			<li>Billing</li>
+		</ul>
 	</section>
 
 	<!--================== PROFILE CONTAINTER ===================-->
@@ -35,7 +37,7 @@
 			<div id="imgContainer">
 				<img src="img/hart_logo.png" alt="Hart Logo" />
 			</div>
-			<div class="col-sm-12">
+			<div id="addPhoto" class="col-sm-12">
 				<button>Add photo from...</button>
 			</div>
 		</div>
@@ -65,7 +67,7 @@
 					</div>
 				</form>
 				<div id="emailUpdates" class="col-sm-9 col-sm-offset-3">
-					<span>I'd like to receive email updates</span><input type="radio" id="updates"> Yes <input type="radio" id="updates"> No
+					<span>I'd like to receive email updates.</span><input type="radio" id="updates"> Yes <input type="radio" id="updates"> No
 				</div>
 				<form id="password" class="form-horizontal formLayout">
 					<div class="form-group">

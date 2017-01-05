@@ -23,7 +23,7 @@ Text Domain:
   width: 200px;
   height: 40px;
   background-color: #fff;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #E1E1E1;
   border-radius: 3px;
   color: #1D7BE3;
 }
@@ -45,7 +45,7 @@ Text Domain:
 .formLayout input {
   height: 46px;
   box-shadow: 0 0 0 0px;
-  border: 1px solid #666;
+  border: 1px solid #E1E1E1;
   border-radius: 3px;
 }
 /* === 1.0 GENERAL === */
@@ -59,59 +59,41 @@ body {
   font-weight: 700;
   padding: 15px 0;
 }
-#navTabs {
+.navTabs {
   position: relative;
-  height: 40px;
+  height: 45px;
 }
-#navTabs button {
+.navTabs ul li {
   position: relative;
   display: inline-block;
+  list-style: none;
   padding: 0;
   margin-left: -4px;
-  margin-top: -2px;
   width: 150px;
   height: 45px;
   font-size: 14px;
-  font-weight: 700;
-  border-radius: 3px;
-  border-top: 1px solid #666;
-  border-left: 1px solid #666;
-  border-right: 1px solid #666;
+  font-weight: 300;
+  text-align: center;
+  line-height: 45px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top: 1px solid #E1E1E1;
+  border-left: 1px solid #E1E1E1;
+  border-right: 1px solid #E1E1E1;
   border-bottom: none;
-  background-color: #1D7BE3;
-  color: #fff;
+  background-color: #fff;
+  color: #1D7BE3;
   box-shadow: none;
   z-index: 2;
 }
-#navTabs button:after {
-  position: absolute;
-  bottom: 0;
-  left: -1px;
-  width: 150px;
-  height: 2px;
-  background-color: #fff;
-  content: '';
-}
-#navTabs button:active {
-  box-shadow: none;
-}
-#navTabs button.active {
-  background-color: #fff;
-  color: #1D7BE3;
-}
-#navTabs button.active:after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  border: 1px solid #fff;
-  width: 150px;
-  height: 2px;
-  background-color: #fff;
-  content: '';
+.navTabs ul li.active {
+  background-color: #1D7BE3;
+  color: #fff;
+  height: 46px;
 }
 /* === 3.0 INFO CONTAINER === */
 #profileContainer {
-  border: 1px solid #666;
+  border: 1px solid #E1E1E1;
   padding-top: 25px;
 }
 #profileContainer h2 {
