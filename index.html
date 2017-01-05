@@ -72,7 +72,19 @@
 					</div>
 				</form>
 				<div id="emailUpdates" class="col-sm-9 col-sm-offset-3">
-					<div><span>I'd like to receive email updates.</span></div><div><span><input type="radio" id="updates"> Yes <input type="radio" id="updates"> No</span></div>
+					<div class="col-sm-7">
+						<span>I'd like to receive email updates.</span>
+					</div>
+					<div class="emailUpdateButtons">
+						<div class="col-sm-6 radioButton">
+							<input type="radio" id="yes" name="update" value="updateYes">
+							<label for="yes">Yes</label>
+						</div>
+						<div class="col-sm-6 radioButton">
+							<input type="radio" id="no" name="update" value="updateNo">
+							<label for="no">No</label>
+						</div>
+					</div>
 				</div>
 				<form id="password" class="form-horizontal formLayout">
 					<div class="form-group">
@@ -119,7 +131,7 @@
 		</div>
 
 		<!--================== ACTION BUTTONS ===================-->
-		<div id="actionButtons" class="col-sm-8 col-sm-push-1">
+		<div id="actionButtons" >
 			<button class="button buttonWhite">Cancel</button>
 			<button class="button buttonBlue">Save</button>
 		</div>
