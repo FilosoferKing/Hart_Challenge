@@ -17,22 +17,24 @@ Text Domain:
 @lineGray : #E1E1E1;
 
 // Reusables
-.buttonBlue {
+.button {
 	width: 200px;
 	height: 40px;
-	background-color: @blue;
 	border: none;
-	border-radius: 3px;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.blue {
+	background-color: @blue;
 	color: #fff;
 }
 
-.buttonWhite {
-	width: 200px;
-	height: 40px;
+.white {
 	background-color: #fff;
-	border: 1px solid @lineGray ;
-	border-radius: 3px;
 	color: @blue;
+	border: 1px solid @lineGray;
 }
 
 .formLayout {
@@ -138,7 +140,34 @@ html, body {
 		#addPhoto {
 			position: relative;
 			padding: 15px 0;
+
+			button {
+				position: relative;
+				font-weight: 500;
+				text-align: left;
+				padding-left: 10px;
+
+				img {
+					position: absolute;
+					top: 18px;
+					left: 173px;
+					width: 9px;
+					height: 4px;
+				}
+			}
 		}
+
+		.remove {
+			width: 200px;
+			padding-left: 0;
+			padding-right: 0;
+
+			p {
+				text-align: center;
+				color: @blue;
+			}
+		}
+
 	}
 
 	#profileSection {
@@ -181,6 +210,10 @@ html, body {
 	}
 
 	#socialMediaSection {
+
+		input {
+			padding-left: 50px;
+		}
 
 		#facebook {
 			background: transparent url('../../img/facebook.png') no-repeat 2% 50%;

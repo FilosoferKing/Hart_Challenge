@@ -11,21 +11,22 @@ Text Domain:
 2.0 Navigation Tabs
 3.0 Info Container
 --------------------------------------------------------------*/
-.buttonBlue {
+.button {
   width: 200px;
   height: 40px;
-  background-color: #1D7BE3;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.blue {
+  background-color: #1D7BE3;
   color: #fff;
 }
-.buttonWhite {
-  width: 200px;
-  height: 40px;
+.white {
   background-color: #fff;
-  border: 1px solid #E1E1E1;
-  border-radius: 3px;
   color: #1D7BE3;
+  border: 1px solid #E1E1E1;
 }
 .formLayout {
   height: 46px;
@@ -110,6 +111,28 @@ body {
   position: relative;
   padding: 15px 0;
 }
+#profileContainer #photoSection #addPhoto button {
+  position: relative;
+  font-weight: 500;
+  text-align: left;
+  padding-left: 10px;
+}
+#profileContainer #photoSection #addPhoto button img {
+  position: absolute;
+  top: 18px;
+  left: 173px;
+  width: 9px;
+  height: 4px;
+}
+#profileContainer #photoSection .remove {
+  width: 200px;
+  padding-left: 0;
+  padding-right: 0;
+}
+#profileContainer #photoSection .remove p {
+  text-align: center;
+  color: #1D7BE3;
+}
 #profileContainer #profileSection {
   position: relative;
 }
@@ -138,6 +161,9 @@ body {
   right: 0;
   top: 0;
   left: 10px;
+}
+#profileContainer #socialMediaSection input {
+  padding-left: 50px;
 }
 #profileContainer #socialMediaSection #facebook {
   background: transparent url('../../img/facebook.png') no-repeat 2% 50%;
