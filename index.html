@@ -53,81 +53,89 @@
 			<!-- Profile Section -->
 			<div id="profileSection" class="col-xs-12 col-sm-12">
 				<h2>Profile</h2>
-				<form class="form-horizontal formLayout">
-					<div class="form-group">
-					<label for="name" class="col-sm-3 control-label">Name</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="name">
-						</div>
-						<img src="img/question_fill.png"/>
-					</div>
-				</form>
-				<form class="form-horizontal formLayout">
-					<div class="form-group">
-					<label for="email" class="col-sm-3 control-label">Email Address</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="email">
-						</div>
-						<img src="img/question_fill.png"/>
-					</div>
-				</form>
-				<div id="emailUpdates" class="col-xs-12 col-sm-9 col-sm-offset-3">
-					<div class="col-xs-12 col-sm-7 updateMessage">
-						<span>I'd like to receive email updates.</span>
-					</div>
-					<div class="emailUpdateButtons">
-						<div class="col-sm-6 radioButton">
-							<input type="radio" id="yes" name="update" value="updateYes">
-							<label for="yes">Yes</label>
-						</div>
-						<div class="col-sm-6 radioButton">
-							<input type="radio" id="no" name="update" value="updateNo">
-							<label for="no">No</label>
-						</div>
-					</div>
-				</div>
-				<form id="password" class="form-horizontal formLayout">
-					<div class="form-group">
-					<label for="password" class="col-sm-3 control-label">Password</label>
-						<div class="col-sm-9 buttonDiv">
-							<button class="button buttonWhite">Change my Password</button>
+
+				<div class="col-xs-12 textInputContainer">
+					<label class="col-xs-12 col-sm-3">Name</label>
+					<div class="col-xs-12 col-sm-9 textInputFieldWrapper">
+						<input type="text" class="col-xs-12 textInputField" id="name">
+						<div class="toolTip tipLeft" data-toolTip="Enter your full name.">
 							<img src="img/question_fill.png"/>
 						</div>
 					</div>
-				</form>
+				</div>
+
+				<div class="col-xs-12 textInputContainer mb0">
+					<label class="col-xs-12 col-sm-3">Email Address</label>
+					<div class="col-xs-12 col-sm-9 textInputFieldWrapper">
+						<input type="text" class="col-xs-12 textInputField" id="email">
+						<div class="toolTip tipLeft" data-toolTip="Enter your email address.">
+							<img src="img/question_fill.png"/>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 col-sm-9 col-sm-offset-3 emailUpdates mb15">
+					<span class="col-xs-12 col-sm-8">I'd like to receive email updates.</span>
+					<div class="radioButtonsContainer">
+						<div class="radioButtonWrapper">
+							<input type="radio" id="radio1" name="radioInput" value="radioOption1">
+							<label for="radio1"> Yes</label>
+						</div>
+						<div class="radioButtonWrapper">
+							<input type="radio" id="radio2" name="radioInput" value="radioOption2">
+							<label for="radio2"> No</label>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-xs-12 password mt15">
+					<label class="col-xs-12 col-sm-3 mt15">Password</label>
+					<div class="col-xs-12 col-sm-9 buttonDiv mt15">
+						<button class="button buttonWhite">Change my Password</button>
+						<div class="toolTip tipTop" data-toolTip="Change your password.">
+							<img src="img/question_fill.png"/>
+						</div>
+					</div>
+				</div>
+
 			</div>
 
 			<!-- Social Media Section -->
 			<div id="socialMediaSection" class="col-xs-12 col-sm-12">
 				<h2>Social Media</h2>
-				<form class="form-horizontal formLayout">
-					<div class="form-group">
-					<label for="facebook" class="col-sm-3 control-label">Facebook</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="facebook">
+
+				<div class="col-xs-12 textInputContainer">
+					<label class="col-xs-12 col-sm-3">Facebook</label>
+					<div class="col-xs-12 col-sm-9 textInputFieldWrapper">
+						<input type="text" class="col-xs-12 textInputField" id="facebook">
+						<div class="toolTip tipLeft" data-toolTip="Enter your Facebook URL">
+							<img src="img/question_fill.png"/>
 						</div>
-						<img src="img/question_fill.png"/>
 					</div>
-				</form>
-				<form class="form-horizontal formLayout">
-					<div class="form-group">
-					<label for="twitter" class="col-sm-3 control-label">Twitter</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="twitter">
+				</div>
+
+				<div class="col-xs-12 textInputContainer">
+					<label class="col-xs-12 col-sm-3">Twitter</label>
+					<div class="col-xs-12 col-sm-9 textInputFieldWrapper">
+						<input type="text" class="col-xs-12 textInputField" id="twitter">
+						<div class="toolTip tipLeft" data-toolTip="Enter your Twitter URL.">
+							<img src="img/question_fill.png"/>
 						</div>
-						<img src="img/question_fill.png"/>
 					</div>
-				</form>
-				<form class="form-horizontal formLayout">
-					<div class="form-group">
-					<label for="google" class="col-sm-3 control-label">Google</label>
-						<div class="col-sm-9">
-							<input type="text" class="form-control" id="google">
+				</div>
+
+				<div class="col-xs-12 textInputContainer">
+					<label class="col-xs-12 col-sm-3">Google</label>
+					<div class="col-xs-12 col-sm-9 textInputFieldWrapper">
+						<input type="text" class="col-xs-12 textInputField" id="google">
+						<div class="toolTip tipLeft" data-toolTip="Enter your Google Plus URL.">
+							<img src="img/question_fill.png"/>
 						</div>
-						<img src="img/question_fill.png"/>
 					</div>
-				</form>
+				</div>
+
 			</div>
+
 		</div>
 
 		<!--================== ACTION BUTTONS ===================-->

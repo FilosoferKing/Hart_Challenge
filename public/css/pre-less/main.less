@@ -7,17 +7,23 @@ Text Domain:
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+.01 Variables (LESS ONLY)
+.02 Resusables
+.03 Helper Classes
+.04 Tool Tips
+.05 Inputs
 1.0 General
 2.0 Navigation Tabs
 3.0 Info Container
 --------------------------------------------------------------*/
 
-// Variables 
+/* === .01 VARIABLES (LESS ONLY) === */
 @blue: #1D7BE3;
 @lineGray : #E1E1E1;
+@toolTipGray: #6F7276;
 @mobile768: ~"only screen and (max-width: 768px)";
 
-// Reusables
+/* === .02 REUSABLES === */
 .button {
 	width: 200px;
 	height: 40px;
@@ -39,7 +45,7 @@ Text Domain:
 	color: #fff;
 
 	&:hover {
-		box-shadow: 0 2px 0px #000;
+		box-shadow: 0 2px 0px #666;
 	}
 }
 
@@ -53,58 +59,285 @@ Text Domain:
 	}
 }
 
-.formLayout {
-	height: 46px;
+/* === .03 HELPER CLASSES === */
+.mt15 { margin-top: 15px !important; }
 
-	.form-group {
-		position: relative;
-		margin: 15px 0;
+.mb15 { margin-bottom: 15px !important; }
 
-		img {
-			position: absolute;
-			right: -20px;
-			top: 13px;
-			width: 19px;
-			height: 19px;
+.ml15 {	margin-left: 15px !important; }
 
-			@media @mobile768 {
-				margin: 25px 0;
-			}
-			
-		}
+.mr15 { margin-right: 15px !important; }
 
-		@media @mobile768 {
-			margin: 35px 0;
-		}
+.mt0 { margin-top: 0 !important; }
+
+.mb0 { margin-bottom: 0 !important; }
+
+.ml0 { margin-left: 0 !important; }
+
+.mr0 { margin-right: 0 !important; }
+
+/* === .04 TOOL TIPS === */
+.toolTip {
+	position: relative;
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	z-index: 2;
+
+	img {
+		width: 100%;
+		height: 100%;
 	}
 
-	label {
-		font-weight: 300;
+	&:before {
+		position: absolute;
+		top: 6px;
+		right: 16px;
+		transform: scale(.75, 1) translateX(10%);
+		border-color: transparent transparent transparent @toolTipGray;
+		border-width: 6px;
+		border-style: solid;
+		content: '';
+		opacity: 0;
 	}
 
-	input {
-		position: relative;
+	&:after {
+		position: absolute;
+		top: -12px;
+		right: 28px;
 		height: 46px;
-		box-shadow: 0 0 0 0px;
-		border: 1px solid @lineGray;
-		border-radius: 4px;
+		transform: scale(.75, 1) translateX(10%);
+		content: '';
+		opacity: 0;
+	}
 
-		&:focus {
-			border: 2px solid @blue;
-			box-shadow: none;
+	&:hover {
+
+		&:before {
+			position: absolute;
+			top: 6px;
+			right: 16px;
+			width: 9px;
+			height: 9px;
+			content: '';
+			color: #fff;
+			border-color: transparent transparent transparent @toolTipGray;
+			border-width: 6px;
+			border-style: solid;
+			opacity: 1;
+			-webkit-transition: all 0.5s ease-out;
+			-moz-transition: all 0.5s ease-out;
+			-ms-transition: all 0.5s ease-out;
+			transition: all 0.25s ease-out;
 		}
 
-		&:disabled {
-			position: relative;
-			background-color: #e6e6e6;
+		&:after {
+			position: absolute;
+			top: -12px;
+			right: 28px;
+			height: 46px;
+			content: attr(data-toolTip);
+			padding: 10.5px 15px;
+			color: #fff;
+			font-size: 14px;
+			font-weight: 300;
+			border-radius: 4px;
+			background-color: @toolTipGray;
+			white-space: nowrap;
+			opacity: 1;
+			-webkit-transition: all 0.5s ease-out;
+			-moz-transition: all 0.5s ease-out;
+			-ms-transition: all 0.5s ease-out;
+			transition: all 0.25s ease-out;
 		}
 	}
 }
 
+.tipLeft {
+
+	&:before {
+		transform: scale(.75, 1) translateX(10%);
+	}
+
+	&:after {
+		transform: scale(.75, 1) translateX(10%);
+	}
+
+	&:hover {
+
+		&:before {
+			border-color: transparent transparent transparent @toolTipGray;
+			-webkit-transform: scale(1, 1) translateX(0);
+			-moz-transform: scale(1, 1) translateX(0);
+			-ms-transform: scale(1, 1) translateX(0);
+			transform: scale(1, 1) translateX(0);
+			-webkit-transform-origin: right center;
+			-moz-transform-origin: right center;
+			-ms-transform-origin: right center;
+			transform-origin: right center;
+		}
+
+		&:after {
+			right: 28px;
+			-webkit-transform: scale(1, 1) translateX(0);
+			-moz-transform: scale(1, 1) translateX(0);
+			-ms-transform: scale(1, 1) translateX(0);
+			transform: scale(1, 1) translateX(0);
+			-webkit-transform-origin: right center;
+			-moz-transform-origin: right center;
+			-ms-transform-origin: right center;
+			transform-origin: right center;
+		}
+	}
+}
+
+.tipTop {
+
+	&:before {
+		top: -7px;
+		right: 4px;
+		transform: scale(.75, 1) translateY(10%);
+	}
+
+	&:after {
+		top: -53px;
+		right: 50%;
+		transform: scale(.75, 1) translate(50%, 10%);
+	}
+
+	&:hover {
+
+		&:before {
+			top: -7px;
+			right: 4px;
+			border-color: @toolTipGray transparent transparent transparent;
+			-webkit-transform: scale(1, 1) translateY(0);
+			-moz-transform: scale(1, 1) translateY(0);
+			-ms-transform: scale(1, 1) translateY(0);
+			transform: scale(1, 1) translateY(0);
+			-webkit-transform-origin: center bottom;
+			-moz-transform-origin: center bottom;
+			-ms-transform-origin: center bottom;
+			transform-origin: center bottom;
+		}
+
+		&:after {
+			top: -53px;
+			right: 50%;
+			-webkit-transform: scale(1, 1) translate(50%, 0);
+			-moz-transform: scale(1, 1) translate(50%, 0);
+			-ms-transform: scale(1, 1) translate(50%, 0);
+			transform: scale(1, 1) translate(50%, 0);
+			-webkit-transform-origin: center bottom;
+			-moz-transform-origin: center bottom;
+			-ms-transform-origin: center bottom;
+			transform-origin: center bottom;
+		}
+	}
+}
+
+/* === .05 INPUTS === */
+.inputLabel {
+	font-weight: 300;
+	font-size: 14px;
+}
+
+.textInputContainer {
+	margin: 15px 0;
+
+	label {
+		.inputLabel;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 46px;
+		text-align: right;
+
+		@media @mobile768 {
+			text-align: left;
+			padding-left: 0;
+		}
+	}
+}
+
+.textInputFieldWrapper {
+	position: relative;
+	padding: 0;
+
+	.toolTip {
+		position: absolute;
+		right: -35px;
+		top: 13px;
+	}
+}
+
+.textInputField {
+	height: 46px;
+	box-shadow: 0 0 0 transparent;
+	border: 1px solid @lineGray;
+	border-radius: 4px;
+	outline: none;
+
+	&:focus {
+		border: 2px solid @blue;
+	}
+
+	&:disabled {
+		background-color: #e6e6e6;
+	}
+}
+
+.radioButtonWrapper {
+	position: relative;
+	display: inline-block;
+	padding: 0 6px;
+
+	input[type="radio"] {
+		display: none;
+
+		&:checked + label:after {
+			position: absolute;
+			display: block;
+			top: 3px;
+			left: 9px;
+			width: 13px;
+			height: 13px;
+			content: "";
+			border-radius: 11px;
+			background-color: @blue;
+			z-index: 1;
+		}
+	}
+
+	label {
+		.inputLabel;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		&:before {
+			position: relative;
+			display: inline-block;
+  			top: 0px;
+  			width: 19px;
+  			height: 19px;
+  			content: "";
+  			margin: 0 5px 0 0;
+  			border-radius: 11px;
+			border: 2px solid @lineGray;
+			background-color: transparent;
+		}
+	}
+}
+
+.radioButtonsContainer {
+	display: inline-block;
+}
 
 /* === 1.0 GENERAL === */
 html, body {
 	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
 }
 
 /* === 2.0 NAVIGATION TABS === */
@@ -116,7 +349,6 @@ html, body {
 	@media @mobile768 {
 		padding-left: 25px;
 	}
-	
 }
 
 .navTabs {
@@ -127,13 +359,11 @@ html, body {
 		padding-left: 0;
 	}
 	
-
 	ul {
 
 		@media @mobile768 {
 			padding-left: 25px;
 		}
-		
 
 		li {
 			position: relative;
@@ -167,14 +397,11 @@ html, body {
 			@media @mobile768 {
 				width: 25%;
 				padding-left: 0;
-				font-size: 3vw;
+				font-size: 12px;
 				border-bottom: 1px solid @lineGray;
 			}
-			
 		} 
-
 	} 
-
 } 
 
 /* === 3.0 INFO CONTAINER === */
@@ -194,17 +421,17 @@ html, body {
 		height: 38px;
 		top: 50%;
 
+		&:nth-child(1) {
+			left: -19px;
+		}
+
+		&:nth-child(2) {
+			right: -19px;
+		}
+
 		@media @mobile768 {
 			display: none;
 		}
-	}
-
-	img:nth-child(1) {
-		left: -19px;
-	}
-
-	img:nth-child(2) {
-		right: -19px;
 	}
 
 	h2 {
@@ -219,6 +446,10 @@ html, body {
 
 	#photoSection {
 
+		@media @mobile768 {
+			margin-top: 15px;
+		}
+
 		#imgContainer {
 			width: 200px;
 			height: 200px;
@@ -229,8 +460,7 @@ html, body {
 				position: relative;
 				left: 50%;
 				transform: translateX(-50%);
-			}
-				
+			}		
 		}
 
 		#addPhoto {
@@ -274,133 +504,71 @@ html, body {
 				position: relative;
 				left: 50%;
 				transform: translateX(-50%);
-			}
-			
-
+			}	
 		}
-
 	}
 
 	#profileSection {
 		position: relative;
 
-		#emailUpdates {
-			position: relative;
-			font-size: 14px;
-			font-weight: 300;
-			margin-top: 5px;
-			padding: 0;
+		@media @mobile768 {
+			margin-top: 15px;
+		}
 
-			.updateMessage {
-				position: relative;
-				display: inline-block;
-				margin-top: 5px;
-				padding-left: 0;
-				left: 15px;
+		.emailUpdates {
+			position: relative;
+
+			span {
+				position: absolute;
+				top: 0;
+				left: 0;
 
 				@media @mobile768 {
-					padding-top: 25px;
+					position: relative;
 					text-align: center;
+					margin-top: 5px;
 				}
 			}
 
-			// Layover for Radio buttons
-			.emailUpdateButtons {
+			.radioButtonsContainer {
 				position: absolute;
-				right: -15px;
-				display: inline-block;
-				width: 150px;
+				top: 0;
+				right: 15px;
 
 				@media @mobile768 {
 					position: relative;
 					left: 50%;
 					transform: translateX(-45%);
-					width: auto;
-				}
-
-				.radioButton {
-					position: relative;
-					margin: 0;
-					padding: 0;
-					z-index: 5;
-
-					input[type='radio'] {
-						display: none;
-
-						&[type=radio]:checked + label:after {
-							position: absolute;
-						  	top: 9px;
-						  	left: 4px;
-						  	width: 12px;
-						  	height: 12px;
-						  	content: " ";
-							border-radius: 11px;
-						  	display: block;
-						  	background: @blue;
-						}
-					}
-
-					label {
-						color: #000;
-						font-weight: 300;
-						font-size: 14px;
-
-						&:before {
-							position: relative;
-						  	top: 5px;
-						  	width: 20px;
-						  	height: 20px;
-						  	content: " ";
-						  	display: inline-block;
-						  	margin: 0 5px 0 0;
-						  	border-radius: 11px;
-						  	border: 2px solid @lineGray;
-						  	background-color: white;
-						}
-					}
-
-					@media @mobile768 {
-						display: inline-block;
-						width: 55px;
-					}
+					margin-top: 5px;
 				}
 			}
-
 		}
 
-		#password {
+		.password {
 
-			@media @mobile768 {
-				//margin-top: 25px;
+			.buttonDiv {
+				position: relative;
+				padding: 0;
+
+				.toolTip {
+					position: absolute;
+					top: 10px;
+					left: 215px;
+					width: 19px;
+					heigth: 19px;
+				}
 			}
 
-			.form-group {
-				padding-top: 50px;
+			label {
+				.inputLabel; 
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				height: 40px;
+				text-align: right;
 
-				label {
-					@media @mobile768 {
-						margin-top: 15px;
-					}
-				}
-
-				.buttonDiv {
-					height: 45px;
-
-					button {
-						display: inline-block;
-					}
-
-					img {
-						display: inline-block;
-						position: relative;
-						right: 0;
-						top: 0;
-						left: 10px;
-					}
-
-					@media @mobile768 {
-						margin-top: -15px;
-					}
+				@media @mobile768 {
+					text-align: left;
 				}
 			}
 		}
@@ -409,7 +577,7 @@ html, body {
 	#socialMediaSection {
 
 		@media @mobile768 {
-			margin-top: 100px;
+			margin-top: 15px;
 		}
 
 		input {
@@ -430,7 +598,6 @@ html, body {
 			background: transparent url('../../img/google.png') no-repeat 2% 50%;
 			background-size: 38px 38px;
 		}
-
 	}
 
 	#actionButtons {
@@ -460,9 +627,7 @@ html, body {
 				transform: translateX(-100px);
 			}
 		}
-
 	}
-
 }
 	
 

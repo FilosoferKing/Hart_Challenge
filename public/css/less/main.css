@@ -7,10 +7,17 @@ Text Domain:
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+.01 Variables (LESS ONLY)
+.02 Resusables
+.03 Helper Classes
+.04 Tool Tips
+.05 Inputs
 1.0 General
 2.0 Navigation Tabs
 3.0 Info Container
 --------------------------------------------------------------*/
+/* === .01 VARIABLES (LESS ONLY) === */
+/* === .02 REUSABLES === */
 .button {
   width: 200px;
   height: 40px;
@@ -30,7 +37,7 @@ Text Domain:
   color: #fff;
 }
 .buttonBlue:hover {
-  box-shadow: 0 2px 0px #000;
+  box-shadow: 0 2px 0px #666;
 }
 .buttonWhite {
   background-color: #fff;
@@ -40,52 +47,254 @@ Text Domain:
 .buttonWhite:hover {
   box-shadow: 0 2px 0px #1D7BE3;
 }
-.formLayout {
-  height: 46px;
+/* === .03 HELPER CLASSES === */
+.mt15 {
+  margin-top: 15px !important;
 }
-.formLayout .form-group {
+.mb15 {
+  margin-bottom: 15px !important;
+}
+.ml15 {
+  margin-left: 15px !important;
+}
+.mr15 {
+  margin-right: 15px !important;
+}
+.mt0 {
+  margin-top: 0 !important;
+}
+.mb0 {
+  margin-bottom: 0 !important;
+}
+.ml0 {
+  margin-left: 0 !important;
+}
+.mr0 {
+  margin-right: 0 !important;
+}
+/* === .04 TOOL TIPS === */
+.toolTip {
   position: relative;
-  margin: 15px 0;
-}
-.formLayout .form-group img {
-  position: absolute;
-  right: -20px;
-  top: 13px;
+  display: inline-block;
   width: 19px;
   height: 19px;
+  z-index: 2;
 }
-@media only screen and (max-width: 768px) {
-  .formLayout .form-group img {
-    margin: 25px 0;
-  }
+.toolTip img {
+  width: 100%;
+  height: 100%;
 }
-@media only screen and (max-width: 768px) {
-  .formLayout .form-group {
-    margin: 35px 0;
-  }
+.toolTip:before {
+  position: absolute;
+  top: 6px;
+  right: 16px;
+  transform: scale(0.75, 1) translateX(10%);
+  border-color: transparent transparent transparent #6F7276;
+  border-width: 6px;
+  border-style: solid;
+  content: '';
+  opacity: 0;
 }
-.formLayout label {
-  font-weight: 300;
-}
-.formLayout input {
-  position: relative;
+.toolTip:after {
+  position: absolute;
+  top: -12px;
+  right: 28px;
   height: 46px;
-  box-shadow: 0 0 0 0px;
+  transform: scale(0.75, 1) translateX(10%);
+  content: '';
+  opacity: 0;
+}
+.toolTip:hover:before {
+  position: absolute;
+  top: 6px;
+  right: 16px;
+  width: 9px;
+  height: 9px;
+  content: '';
+  color: #fff;
+  border-color: transparent transparent transparent #6F7276;
+  border-width: 6px;
+  border-style: solid;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.25s ease-out;
+}
+.toolTip:hover:after {
+  position: absolute;
+  top: -12px;
+  right: 28px;
+  height: 46px;
+  content: attr(data-toolTip);
+  padding: 10.5px 15px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  border-radius: 4px;
+  background-color: #6F7276;
+  white-space: nowrap;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -ms-transition: all 0.5s ease-out;
+  transition: all 0.25s ease-out;
+}
+.tipLeft:before {
+  transform: scale(0.75, 1) translateX(10%);
+}
+.tipLeft:after {
+  transform: scale(0.75, 1) translateX(10%);
+}
+.tipLeft:hover:before {
+  border-color: transparent transparent transparent #6F7276;
+  -webkit-transform: scale(1, 1) translateX(0);
+  -moz-transform: scale(1, 1) translateX(0);
+  -ms-transform: scale(1, 1) translateX(0);
+  transform: scale(1, 1) translateX(0);
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+}
+.tipLeft:hover:after {
+  right: 28px;
+  -webkit-transform: scale(1, 1) translateX(0);
+  -moz-transform: scale(1, 1) translateX(0);
+  -ms-transform: scale(1, 1) translateX(0);
+  transform: scale(1, 1) translateX(0);
+  -webkit-transform-origin: right center;
+  -moz-transform-origin: right center;
+  -ms-transform-origin: right center;
+  transform-origin: right center;
+}
+.tipTop:before {
+  top: -7px;
+  right: 4px;
+  transform: scale(0.75, 1) translateY(10%);
+}
+.tipTop:after {
+  top: -53px;
+  right: 50%;
+  transform: scale(0.75, 1) translate(50%, 10%);
+}
+.tipTop:hover:before {
+  top: -7px;
+  right: 4px;
+  border-color: #6F7276 transparent transparent transparent;
+  -webkit-transform: scale(1, 1) translateY(0);
+  -moz-transform: scale(1, 1) translateY(0);
+  -ms-transform: scale(1, 1) translateY(0);
+  transform: scale(1, 1) translateY(0);
+  -webkit-transform-origin: center bottom;
+  -moz-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+.tipTop:hover:after {
+  top: -53px;
+  right: 50%;
+  -webkit-transform: scale(1, 1) translate(50%, 0);
+  -moz-transform: scale(1, 1) translate(50%, 0);
+  -ms-transform: scale(1, 1) translate(50%, 0);
+  transform: scale(1, 1) translate(50%, 0);
+  -webkit-transform-origin: center bottom;
+  -moz-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+/* === .05 INPUTS === */
+.inputLabel {
+  font-weight: 300;
+  font-size: 14px;
+}
+.textInputContainer {
+  margin: 15px 0;
+}
+.textInputContainer label {
+  font-weight: 300;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 46px;
+  text-align: right;
+}
+@media only screen and (max-width: 768px) {
+  .textInputContainer label {
+    text-align: left;
+    padding-left: 0;
+  }
+}
+.textInputFieldWrapper {
+  position: relative;
+  padding: 0;
+}
+.textInputFieldWrapper .toolTip {
+  position: absolute;
+  right: -35px;
+  top: 13px;
+}
+.textInputField {
+  height: 46px;
+  box-shadow: 0 0 0 transparent;
   border: 1px solid #E1E1E1;
   border-radius: 4px;
+  outline: none;
 }
-.formLayout input:focus {
+.textInputField:focus {
   border: 2px solid #1D7BE3;
-  box-shadow: none;
 }
-.formLayout input:disabled {
-  position: relative;
+.textInputField:disabled {
   background-color: #e6e6e6;
+}
+.radioButtonWrapper {
+  position: relative;
+  display: inline-block;
+  padding: 0 6px;
+}
+.radioButtonWrapper input[type="radio"] {
+  display: none;
+}
+.radioButtonWrapper input[type="radio"]:checked + label:after {
+  position: absolute;
+  display: block;
+  top: 3px;
+  left: 9px;
+  width: 13px;
+  height: 13px;
+  content: "";
+  border-radius: 11px;
+  background-color: #1D7BE3;
+  z-index: 1;
+}
+.radioButtonWrapper label {
+  font-weight: 300;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.radioButtonWrapper label:before {
+  position: relative;
+  display: inline-block;
+  top: 0px;
+  width: 19px;
+  height: 19px;
+  content: "";
+  margin: 0 5px 0 0;
+  border-radius: 11px;
+  border: 2px solid #E1E1E1;
+  background-color: transparent;
+}
+.radioButtonsContainer {
+  display: inline-block;
 }
 /* === 1.0 GENERAL === */
 html,
 body {
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 /* === 2.0 NAVIGATION TABS === */
 #settingsTitle {
@@ -144,7 +353,7 @@ body {
   .navTabs ul li {
     width: 25%;
     padding-left: 0;
-    font-size: 3vw;
+    font-size: 12px;
     border-bottom: 1px solid #E1E1E1;
   }
 }
@@ -165,16 +374,16 @@ body {
   height: 38px;
   top: 50%;
 }
+#profileContainer .changePage:nth-child(1) {
+  left: -19px;
+}
+#profileContainer .changePage:nth-child(2) {
+  right: -19px;
+}
 @media only screen and (max-width: 768px) {
   #profileContainer .changePage {
     display: none;
   }
-}
-#profileContainer img:nth-child(1) {
-  left: -19px;
-}
-#profileContainer img:nth-child(2) {
-  right: -19px;
 }
 #profileContainer h2 {
   font-size: 18px;
@@ -184,6 +393,11 @@ body {
   #profileContainer h2 {
     margin: 0;
     text-align: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  #profileContainer #photoSection {
+    margin-top: 15px;
   }
 }
 #profileContainer #photoSection #imgContainer {
@@ -242,114 +456,67 @@ body {
 #profileContainer #profileSection {
   position: relative;
 }
-#profileContainer #profileSection #emailUpdates {
-  position: relative;
-  font-size: 14px;
-  font-weight: 300;
-  margin-top: 5px;
-  padding: 0;
-}
-#profileContainer #profileSection #emailUpdates .updateMessage {
-  position: relative;
-  display: inline-block;
-  margin-top: 5px;
-  padding-left: 0;
-  left: 15px;
-}
 @media only screen and (max-width: 768px) {
-  #profileContainer #profileSection #emailUpdates .updateMessage {
-    padding-top: 25px;
-    text-align: center;
-  }
-}
-#profileContainer #profileSection #emailUpdates .emailUpdateButtons {
-  position: absolute;
-  right: -15px;
-  display: inline-block;
-  width: 150px;
-}
-@media only screen and (max-width: 768px) {
-  #profileContainer #profileSection #emailUpdates .emailUpdateButtons {
-    position: relative;
-    left: 50%;
-    transform: translateX(-45%);
-    width: auto;
-  }
-}
-#profileContainer #profileSection #emailUpdates .emailUpdateButtons .radioButton {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  z-index: 5;
-}
-#profileContainer #profileSection #emailUpdates .emailUpdateButtons .radioButton input[type='radio'] {
-  display: none;
-}
-#profileContainer #profileSection #emailUpdates .emailUpdateButtons .radioButton input[type='radio'][type=radio]:checked + label:after {
-  position: absolute;
-  top: 9px;
-  left: 4px;
-  width: 12px;
-  height: 12px;
-  content: " ";
-  border-radius: 11px;
-  display: block;
-  background: #1D7BE3;
-}
-#profileContainer #profileSection #emailUpdates .emailUpdateButtons .radioButton label {
-  color: #000;
-  font-weight: 300;
-  font-size: 14px;
-}
-#profileContainer #profileSection #emailUpdates .emailUpdateButtons .radioButton label:before {
-  position: relative;
-  top: 5px;
-  width: 20px;
-  height: 20px;
-  content: " ";
-  display: inline-block;
-  margin: 0 5px 0 0;
-  border-radius: 11px;
-  border: 2px solid #E1E1E1;
-  background-color: white;
-}
-@media only screen and (max-width: 768px) {
-  #profileContainer #profileSection #emailUpdates .emailUpdateButtons .radioButton {
-    display: inline-block;
-    width: 55px;
-  }
-}
-@media only screen and (max-width: 768px) {
-}
-#profileContainer #profileSection #password .form-group {
-  padding-top: 50px;
-}
-@media only screen and (max-width: 768px) {
-  #profileContainer #profileSection #password .form-group label {
+  #profileContainer #profileSection {
     margin-top: 15px;
   }
 }
-#profileContainer #profileSection #password .form-group .buttonDiv {
-  height: 45px;
-}
-#profileContainer #profileSection #password .form-group .buttonDiv button {
-  display: inline-block;
-}
-#profileContainer #profileSection #password .form-group .buttonDiv img {
-  display: inline-block;
+#profileContainer #profileSection .emailUpdates {
   position: relative;
-  right: 0;
+}
+#profileContainer #profileSection .emailUpdates span {
+  position: absolute;
   top: 0;
-  left: 10px;
+  left: 0;
 }
 @media only screen and (max-width: 768px) {
-  #profileContainer #profileSection #password .form-group .buttonDiv {
-    margin-top: -15px;
+  #profileContainer #profileSection .emailUpdates span {
+    position: relative;
+    text-align: center;
+    margin-top: 5px;
+  }
+}
+#profileContainer #profileSection .emailUpdates .radioButtonsContainer {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+@media only screen and (max-width: 768px) {
+  #profileContainer #profileSection .emailUpdates .radioButtonsContainer {
+    position: relative;
+    left: 50%;
+    transform: translateX(-45%);
+    margin-top: 5px;
+  }
+}
+#profileContainer #profileSection .password .buttonDiv {
+  position: relative;
+  padding: 0;
+}
+#profileContainer #profileSection .password .buttonDiv .toolTip {
+  position: absolute;
+  top: 10px;
+  left: 215px;
+  width: 19px;
+  heigth: 19px;
+}
+#profileContainer #profileSection .password label {
+  font-weight: 300;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40px;
+  text-align: right;
+}
+@media only screen and (max-width: 768px) {
+  #profileContainer #profileSection .password label {
+    text-align: left;
   }
 }
 @media only screen and (max-width: 768px) {
   #profileContainer #socialMediaSection {
-    margin-top: 100px;
+    margin-top: 15px;
   }
 }
 #profileContainer #socialMediaSection input {
