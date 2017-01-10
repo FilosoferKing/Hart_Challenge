@@ -13,3 +13,7 @@
 #### Manually run LESS Compiler and Minify CSS
 
     > gulp less
+    
+#### Get Latest Updates
+
+    > git pull
